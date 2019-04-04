@@ -19,7 +19,7 @@ module.exports = function getBabelConfig(cwd: string) {
     babelrc = { extends: file };
   } else {
     babelrc = {
-      presets: [require.resolve('metro-react-native-babel-preset')],
+      presets: [],
     };
   }
 
