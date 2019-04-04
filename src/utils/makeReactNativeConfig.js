@@ -116,7 +116,7 @@ const getDefaultConfig = ({
               },
             },
             {
-              loader: require.resolve('babel-loader'),
+              loader: require.resolve('babel-loader-8'),
               options: Object.assign({}, getBabelConfig(root), {
                 /**
                  * to improve the rebuild speeds
