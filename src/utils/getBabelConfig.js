@@ -9,10 +9,6 @@ const fs = require('fs');
 const path = require('path');
 const logger = require('../logger');
 
-const DEFAULT_BABELRC = {
-  presets: [require.resolve('metro-react-native-babel-preset')],
-};
-
 module.exports = function getBabelConfig(cwd: string) {
   let babelrc;
 
@@ -22,7 +18,9 @@ module.exports = function getBabelConfig(cwd: string) {
     logger.info(`loaded babel-loader configuration: ${file}`);
     babelrc = { extends: file };
   } else {
-    babelrc = DEFAULT_BABELRC;
+    babelrc = {
+      presets: [require.resolve('metro-react-native-babel-preset')],
+    };
   }
 
   return Object.assign({}, babelrc, {
